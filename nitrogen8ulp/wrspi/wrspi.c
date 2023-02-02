@@ -1,3 +1,4 @@
+#include <android/log.h>
 #include <errno.h>
 #include <fcntl.h>
 #include <getopt.h>
@@ -18,11 +19,15 @@
 #define BPL (XRES/8)
 #define DISPBYTES (YRES*BPL)
 
+#define TAG "wrspi"
+#define ALOGE(...) __android_log_print(ANDROID_LOG_ERROR, TAG, __VA_ARGS__)
+#define ALOGW(...) __android_log_print(ANDROID_LOG_WARN , TAG, __VA_ARGS__)
+
 static unsigned char bmpdata[DISPBYTES];
 static void pabort(char const *msg)
 {
-	fprintf(stderr, "%s\n", msg);
-	abort();
+	ALOGE("%s\n", msg);
+    abort();
 }
 
 static void transfer_file(int fdspi, char const *filename)
@@ -34,7 +39,7 @@ static void transfer_file(int fdspi, char const *filename)
 		pabort("can't stat input file");
 
 	if (sb.st_size != DISPBYTES) {
-		printf("%lu bytes != display(%u)\n",
+		ALOGW("%lu bytes != display(%u)\n",
 		       sb.st_size, DISPBYTES);
 		pabort("try again");
 	}
@@ -45,7 +50,7 @@ static void transfer_file(int fdspi, char const *filename)
 
 	numread = read(fdbmp, bmpdata, sizeof(bmpdata));
 	if (DISPBYTES != numread) {
-		printf("Error %d reading %s\n", errno, filename);
+		ALOGW("Error %d reading %s\n", errno, filename);
 		pabort("read error");
 	}
 
@@ -53,7 +58,7 @@ static void transfer_file(int fdspi, char const *filename)
 	while (offs < DISPBYTES) {
 		numwrote = write(fdspi, bmpdata+offs, sizeof(bmpdata)-offs);
 		if (0 >= numwrote) {
-			printf("Error %d:%d sending %s\n", errno, numwrote, filename);
+			ALOGW("Error %d:%d sending %s\n", errno, numwrote, filename);
 			pabort("write error");
 		}
 		offs += numwrote;
@@ -69,8 +74,10 @@ int main (int argc, char const *argv[])
 		int arg, fdspi;
 
 		fdspi = open(device, O_RDWR);
-		if (fdspi < 0)
-			perror("can't open device");
+		if (fdspi < 0) {
+			ALOGE("can't open device");
+            return -1;
+        }
 		
 		for (arg=1; arg < argc; arg++) {
 			transfer_file(fdspi, argv[arg]);
