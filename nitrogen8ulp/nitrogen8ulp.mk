@@ -405,3 +405,7 @@ PRODUCT_COPY_FILES += \
 # aux display writer
 PRODUCT_PACKAGES += \
     wrspi
+
+# force feedback (haptic) test
+PRODUCT_PACKAGES += \
+    fftest
