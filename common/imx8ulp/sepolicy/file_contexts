@@ -1,3 +1,4 @@
+/dev/aux-display                u:object_r:aux_display_device:s0
 /dev/mxc_asrc                   u:object_r:audio_device:s0
 /dev/mxc_hdmi                   u:object_r:video_device:s0
 /dev/mxc_hantro                 u:object_r:video_device:s0
@@ -92,6 +93,8 @@
 
 /vendor/bin/init\.insmod\.sh                u:object_r:init-insmod-sh_exec:s0
 /vendor/etc/early\.init\.cfg                  u:object_r:init-insmod-sh_exec:s0
+
+/system/bin/wrspi              u:object_r:wrspi_exec:s0
 
 /vendor/bin/hw/android\.hardware\.drm@1\.4-service\.clearkey u:object_r:hal_drm_clearkey_exec:s0
 /data/vendor/mediadrm(/.*)? u:object_r:mediadrm_vendor_data_file:s0
