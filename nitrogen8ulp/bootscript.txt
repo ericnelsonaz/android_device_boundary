@@ -114,6 +114,8 @@ fdt set /firmware/android/fstab/vendor dev /dev/block/platform/${bootdev}/by-nam
 
 if itest.s "x" != "x$selinux" ; then
 	setenv bootargs $bootargs androidboot.selinux=$selinux
+else
+	setenv bootargs $bootargs androidboot.selinux=permissive
 fi
 
 if itest.s "x" != "x${lcd_density}" ; then
