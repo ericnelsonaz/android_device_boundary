@@ -42,7 +42,6 @@ cc_binary {
         "-Wall",
         "-Werror",
     ],
-    init_rc: ["wrspi.rc"],
     sanitize: {
         memtag_heap: true,
     }
