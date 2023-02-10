@@ -1,0 +1,24 @@
+# Copyright (C) 2010 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+key 431 MEDIA_PREVIOUS          # KEY_DISPLAYTOGGLE     aux-left
+key 178 MEDIA_NEXT              # KEY_SCROLLDOWN        aux-right
+key 158 MEDIA_CLOSE             # KEY_BACK              nav-back
+key 139 MEDIA_TOP_MENU          # KEY_MENU              nav-menu
+key 28  MEDIA_EJECT             # KEY_ENTER             nav-select
+key 103 MEDIA_STEP_FORWARD      # KEY_UP                nav-up
+key 108 MEDIA_STEP_BACKWARD     # KEY_DOWN              nav-down
+key 105 MEDIA_SKIP_BACKWARD     # KEY_LEFT              nav-left
+key 106 MEDIA_SKIP_FORWARD      # KEY_RIGHT             nav-right
+key 116 MEDIA_STOP              # KEY_POWER             pbc-int

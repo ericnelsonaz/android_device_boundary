@@ -409,3 +409,7 @@ PRODUCT_PACKAGES += \
 # force feedback (haptic) test
 PRODUCT_PACKAGES += \
     fftest
+
+# Copy .kl file for generic voice remotes
+PRODUCT_COPY_FILES += \
+    $(IMX_DEVICE_PATH)/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl
