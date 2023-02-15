@@ -14,11 +14,11 @@
 
 key 431 MEDIA_PREVIOUS          # KEY_DISPLAYTOGGLE     aux-left
 key 178 MEDIA_NEXT              # KEY_SCROLLDOWN        aux-right
-key 158 MEDIA_CLOSE             # KEY_BACK              nav-back
-key 139 MEDIA_TOP_MENU          # KEY_MENU              nav-menu
-key 28  MEDIA_EJECT             # KEY_ENTER             nav-select
-key 103 MEDIA_STEP_FORWARD      # KEY_UP                nav-up
-key 108 MEDIA_STEP_BACKWARD     # KEY_DOWN              nav-down
-key 105 MEDIA_SKIP_BACKWARD     # KEY_LEFT              nav-left
-key 106 MEDIA_SKIP_FORWARD      # KEY_RIGHT             nav-right
+key 158 BACK                    # KEY_BACK              nav-back
+key 139 MEDIA_PLAY_PAUSE        # KEY_MENU              nav-menu
+key 28  ENTER                   # KEY_ENTER             nav-select
+key 103 DPAD_UP                 # KEY_UP                nav-up
+key 108 DPAD_DOWN               # KEY_DOWN              nav-down
+key 105 DPAD_LEFT               # KEY_LEFT              nav-left
+key 106 DPAD_RIGHT              # KEY_RIGHT             nav-right
 key 116 MEDIA_STOP              # KEY_POWER             pbc-int
