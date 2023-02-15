@@ -118,6 +118,9 @@ ifeq ($(TARGET_USE_DYNAMIC_PARTITIONS),true)
   BOARD_SUPER_IMAGE_IN_UPDATE_PACKAGE := true
 endif
 
+#include haptics hal
+$(call inherit-product, external/android-vibrator-hal/vibrator.mk)
+
 #Enable this to disable product partition build.
 IMX_NO_PRODUCT_PARTITION := true
 
