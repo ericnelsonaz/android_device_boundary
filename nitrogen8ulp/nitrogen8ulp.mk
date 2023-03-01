@@ -119,7 +119,7 @@ ifeq ($(TARGET_USE_DYNAMIC_PARTITIONS),true)
 endif
 
 #include haptics hal
-$(call inherit-product, external/android-vibrator-hal/vibrator.mk)
+# $(call inherit-product, external/android-vibrator-hal/vibrator.mk)
 
 #Enable this to disable product partition build.
 IMX_NO_PRODUCT_PARTITION := true
@@ -411,7 +411,8 @@ PRODUCT_PACKAGES += \
 
 # force feedback (haptic) test
 PRODUCT_PACKAGES += \
-    fftest
+    fftest \
+    vibrate
 
 # Copy .kl file for generic voice remotes
 PRODUCT_COPY_FILES += \
