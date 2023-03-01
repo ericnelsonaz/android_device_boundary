@@ -25,11 +25,13 @@
 /dev/dma_heap/secure      0666   system     system
 /dev/gpiochip*            0660   system     system
 /dev/i2c*                 0660   system     system
+/dev/input/event*         0666   system     input
 
 # partitions properties
 /dev/block/platform/soc@0/29800000\.bus/298d0000\.mmc/by-name/frp 0600   system     system
 
 # sysfs properties
+/sys/class/leds/*                   brightness  0666  system system
 /sys/devices/platform/backlight*    brightness  0660  system system
 /sys/devices/platform/busfreq*      enable      0660  system system
 /sys/devices/system/cpu/cpu*        online      0660  root   system
